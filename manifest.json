@@ -1,0 +1,23 @@
+{
+    "name": "Áries Cloud",
+    "short_name": "Áries",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#FAF6F0",
+    "theme_color": "#3A6987",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "https://lh3.googleusercontent.com/d/1yi8pB4-JAoOGDrgLKoNcLlvmaFrydBBc=w192",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1yi8pB4-JAoOGDrgLKoNcLlvmaFrydBBc=w512",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ]
+  }

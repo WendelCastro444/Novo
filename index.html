@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Áries Cloud - PWA</title>
+  
+  <!-- Ligação ao Manifest do PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#3A6987">
+  
+  <!-- Ícone Apple Touch -->
+  <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1yi8pB4-JAoOGDrgLKoNcLlvmaFrydBBc=w192">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #E6EFF5 0%, #F8F4EE 50%, #EBF1F5 100%);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      color: #1A2530;
+      text-align: center;
+      padding: 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      padding: 40px;
+      border-radius: 28px;
+      box-shadow: 0 16px 40px rgba(58, 105, 135, 0.15);
+      max-width: 400px;
+      width: 100%;
+      border: 1.5px solid rgba(255, 255, 255, 0.8);
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 10px 15px rgba(58, 105, 135, 0.2));
+      animation: flutuar 3s ease-in-out infinite;
+    }
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, #3A6987, #4A7A99);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(58, 105, 135, 0.25);
+      transition: transform 0.2s;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="https://lh3.googleusercontent.com/d/1yi8pB4-JAoOGDrgLKoNcLlvmaFrydBBc" alt="Mascote Áries">
+    <h2 style="margin-bottom: 10px;">Áries Cloud</h2>
+    <p style="color: #5C6E7E; font-size: 0.95rem; margin-bottom: 20px;">A preparar o seu ambiente de sono inteligente...</p>
+    
+    <a id="link-app" href="https://script.google.com/a/macros/al.educacao.sp.gov.br/s/AKfycbxvmMFEhTAV1KngWf8urjmLgCrkDNiRj59E766pchWRxUdjvP4NVNPVUzymy9B6lQvoHA/exec" class="btn">Abrir Aplicação</a>
+  </div>
+
+  <script>
+    // Registo do Service Worker para ativar PWA
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker registado com sucesso!'))
+        .catch((err) => console.log('Erro ao registar Service Worker:', err));
+    }
+
+    // Redirecionamento automático após 1.2 segundos para o seu Apps Script
+    setTimeout(() => {
+      window.location.replace("https://script.google.com/a/macros/al.educacao.sp.gov.br/s/AKfycbxvmMFEhTAV1KngWf8urjmLgCrkDNiRj59E766pchWRxUdjvP4NVNPVUzymy9B6lQvoHA/exec");
+    }, 1200);
+  </script>
+
+</body>
+</html>
